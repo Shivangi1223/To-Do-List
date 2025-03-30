@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multitasking To-Do List</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="gradient-bg"></div>
+    <div class="container">
+        <div class="header">
+            <h1><span class="neon-text">N</span><span class="neon-text">E</span><span class="neon-text">O</span><span class="neon-text">N</span> To-Do</h1>
+            <div class="datetime">
+                <div id="time"></div>
+                <div id="date"></div>
+            </div>
+        </div>
+        
+        <div class="input-container">
+            <input type="text" id="taskInput" placeholder="What needs to be done?" autocomplete="off">
+            <button id="addTaskBtn"><i class="fas fa-bolt"></i> Add</button>
+        </div>
+        
+        <div class="controls">
+            <div class="filters">
+                <button class="filter-btn active" data-filter="all">All <span class="counter"></span></button>
+                <button class="filter-btn" data-filter="active">Active <span class="counter"></span></button>
+                <button class="filter-btn" data-filter="completed">Done <span class="counter"></span></button>
+                <button class="filter-btn" data-filter="priority">Priority <span class="counter"></span></button>
+            </div>
+            
+            <div class="search-box">
+                <input type="text" id="searchInput" placeholder="Search tasks...">
+                <i class="fas fa-search"></i>
+            </div>
+        </div>
+        
+        <div class="sort-options">
+            <button class="sort-btn" data-sort="newest"><i class="fas fa-clock"></i> Newest</button>
+            <button class="sort-btn" data-sort="priority"><i class="fas fa-star"></i> Priority</button>
+            <button class="sort-btn" data-sort="due"><i class="fas fa-calendar-day"></i> Due Date</button>
+        </div>
+        
+        <ul id="taskList"></ul>
+        
+        <div class="stats">
+            <div class="progress-container">
+                <div class="progress-bar" id="progressBar"></div>
+                <span id="progressText">0% Complete</span>
+            </div>
+            
+            <div class="action-buttons">
+                <button id="clearCompleted"><i class="fas fa-trash"></i> Clear Done</button>
+                <button id="saveCloudBtn"><i class="fas fa-cloud-upload-alt"></i> Save</button>
+                <button id="darkModeToggle"><i class="fas fa-moon"></i> Theme</button>
+            </div>
+        </div>
+    </div>
+
+    <audio id="completeSound" src="sounds/complete.mp3"></audio>
+    <audio id="deleteSound" src="sounds/delete.mp3"></audio>
+    <audio id="notifySound" src="sounds/notify.mp3"></audio>
+
+    <script src="script.js"></script>
+</body>
+</html>
